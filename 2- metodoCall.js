@@ -1,10 +1,29 @@
-function exibeInfos() {
-    console.log(this.nome, this.email)
+// function exibeInfos() {
+//     console.log(this.nome, this.email)
+//    }
+   
+//    const user = {
+//     nome: 'Mariana',
+//     email: 'm@m.com'
+//    }
+   
+//    exibeInfos.call(user)
+
+function User(nome, email) {
+    this.nome = nome
+    this.email = email
+   
+    this.exibeInfos = function(){
+      console.log(this.nome, this.email)
+    }
    }
    
-   const user = {
-    nome: 'Mariana',
-    email: 'm@m.com'
+   const newUser = new User('mariana', 'm@m.com')
+
+   const outroUser = {
+    nome: 'Rodrigo',
+    email: 'r@r.com'
    }
    
-   exibeInfos.call(user)
+   newUser.exibeInfos() //mariana m@m.com
+   newUser.exibeInfos.call(outroUser) //Rodrigo r@r.com
