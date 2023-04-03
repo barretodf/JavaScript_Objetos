@@ -17,7 +17,7 @@ const exibir = function () {
     console.log(this.nome)
 }
 
-//bind é usado para prender a execução de uma função a um contexto específico
+//bind é usado para prender this a execução de uma função a um contexto específico
 const exibirNome = exibir.bind(user)
 exibirNome()
 exibir()
